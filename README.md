@@ -1,2 +1,3 @@
 # rock-paper-scissors
-This project is a simple version of rock-paper-scissors  game .
+    This project is a simple version of rock-paper-scissor game .
+While workin on this project I had to break it down to small parts then start working on it, first I worked on the computerChoice function which get the computer input .Then I worked on the humanChoice function , where I spent the most time .At first I had some trouble making the counter work , so I did some debugging and search .  
