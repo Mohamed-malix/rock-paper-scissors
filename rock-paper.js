@@ -25,22 +25,23 @@ function getComputerChoice(){
 
 
 
+/* We will remove this and replace it with click  */
+
+// function getHumanChoice(){
+//   let userInput="";
+
+//   userInput=prompt("Enter what you what to play with , rock , paper or scissor !");
+//   userInput= userInput.toLowerCase();
+
+//   return userInput;
+// }
 
 
-function getHumanChoice(){
-  let userInput="";
 
-  userInput=prompt("Enter what you what to play with , rock , paper or scissor !");
-  userInput= userInput.toLowerCase();
+// let num=prompt("How many rounds do you want to play?");
 
-  return userInput;
-}
+// rounds(num);
 
-
-
-let num=prompt("How many rounds do you want to play?");
-
-rounds(num);
 
 
 
@@ -51,46 +52,55 @@ function warGround(computerInput,userInput){
  
 
     if(userInput==='rock' && computerInput==='rock'){
-      return  console.log(` both are rocks,there is no winner! . Your score is ${userScore} vs ${computerScore} for the computer!!` )
+        return document.querySelector('#human').textContent=`Score: ${userScore} vs ${computerScore}` ,
+        document.querySelector('#text').textContent= ` both are rocks,there is no winner! . Your score is ${userScore} vs ${computerScore} for the computer!!` ;
     }
     else if(userInput==='rock' && computerInput==='scissor'){
 
         ++userScore;
-      return  console.log(`Rock vs Scissor  .You win! , your score now is ${userScore}`);
+       return document.querySelector('#human').textContent=`Score: ${userScore} vs ${computerScore}`,
+        document.querySelector('#text').textContent=`Rock vs Scissor  .You win! , your score now is ${userScore}`;
     }
     else if(userInput==='rock' && computerInput==='paper'){
 
         ++computerScore;
-      return  console.log(`Rock vs Paper .You lose! , the computer score now is ${computerScore}`)
+        return document.querySelector('#human').textContent=`Score: ${userScore} vs ${computerScore}`,
+        document.querySelector('#text').textContent=`Rock vs Paper .You lose! , the computer score now is ${computerScore}`;
     }
     else if(userInput==='scissor' && computerInput==='scissor'){
-        console.log(`both are scissors .there is no winner!. Your score is ${userScore}vs ${computerScore} for the computer!!`)
+        return document.querySelector('#human').textContent=`Score: ${userScore} vs ${computerScore}`;
+        document.querySelector('#text').textContent=`both are scissors .there is no winner!. Your score is ${userScore}vs ${computerScore} for the computer!!`;
     }
     else if(userInput==='scissor' && computerInput==='paper'){
 
         ++userScore;
-       return console.log(`Scissor vs Paper . You win !, your score now ${userScore}`);
+        return document.querySelector('#human').textContent=`Score: ${userScore} vs ${computerScore}`,
+        document.querySelector('#text').textContent=`Scissor vs Paper . You win !, your score now ${userScore}`;
     }
     else if(userInput==='scissor' && computerInput==='rock'){
 
        ++computerScore;
-      return  console.log(`Scissor vs Rock . You lose ! , the computer score now is  ${computerScore}`);
+       return document.querySelector('#human').textContent=`Score: ${userScore} vs ${computerScore}`,
+       document.querySelector('#text').textContent=`Scissor vs Rock . You lose ! , the computer score now is  ${computerScore}`;
     }
     else if(userInput==='paper' && computerInput==='paper'){
-        console.log(`both are papers .there is no winner!. Your score is ${userScore}vs ${computerScore} for the computer!!`)
+        return document.querySelector('#human').textContent=`Score: ${userScore} vs ${computerScore}`,
+        document.querySelector('#text').textContent=`both are papers .there is no winner!. Your score is ${userScore}vs ${computerScore} for the computer!!`;
     }
     else if(userInput==='paper' && computerInput==='rock'){
 
         ++userScore;
-       return console.log(`Paper vs Rock . You win !, your score now ${userScore}`);
+        return document.querySelector('#human').textContent=`Score: ${userScore} vs ${computerScore}`,
+        document.querySelector('#text').textContent=`Paper vs Rock . You win !, your score now ${userScore}`;
     }
     else if(userInput==='paper' && computerInput==='scissor'){
 
         ++computerScore;
-      return  console.log(`Paper vs Scissor . You lose ! , the computer score now is  ${computerScore}`);
+        return document.querySelector('#human').textContent=`Score: ${userScore} vs ${computerScore}`,
+        document.querySelector('#text').textContent=`Paper vs Scissor . You lose ! , the computer score now is  ${computerScore}`;
     }
     else{
-        return "You don't want to play!"
+        return "You don't want to play!";
     }
 
 
@@ -100,13 +110,46 @@ function warGround(computerInput,userInput){
 
 
 
-function rounds(num){
-  let i;
 
-  for(i=0; i<num;i++){
-console.log(warGround(getComputerChoice(),getHumanChoice()));
 
-  }
 
-}
 
+
+
+let userInput='';
+
+
+const rock=document.querySelector('.rock');
+rock.addEventListener('click', () => {
+
+  userInput='rock';
+
+  warGround(getComputerChoice(),userInput)
+})
+
+const paper=document.querySelector('.paper');
+paper.addEventListener('click', () => {
+
+  userInput='paper';
+
+  warGround(getComputerChoice(),userInput)
+})
+
+const scissor=document.querySelector('.scissor');
+scissor.addEventListener('click', () => {
+
+  userInput='scissor';
+
+  warGround(getComputerChoice(),userInput)
+})
+
+
+
+
+
+
+const btn=document.querySelector('#reset');
+
+btn.addEventListener('click',() =>{
+   location.reload();
+})
