@@ -3,6 +3,9 @@
 
 let userScore=0,computerScore=0;
 
+
+
+/* get computer choice  */
 function getComputerChoice(){ 
   let number;
   let computerInput;
@@ -25,28 +28,12 @@ function getComputerChoice(){
 
 
 
-/* We will remove this and replace it with click  */
-
-// function getHumanChoice(){
-//   let userInput="";
-
-//   userInput=prompt("Enter what you what to play with , rock , paper or scissor !");
-//   userInput= userInput.toLowerCase();
-
-//   return userInput;
-// }
-
-
-
-// let num=prompt("How many rounds do you want to play?");
-
-// rounds(num);
 
 
 
 
 
-
+/* get human choice  */
 
 function warGround(computerInput,userInput){
  
